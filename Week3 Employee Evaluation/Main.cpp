@@ -1,11 +1,10 @@
 #include <iostream>
 #include "Employee.h"
 #include "Manager.h"
+#include "Menu.h"
 
 int main() {
-	Employee* employee = new Employee("Antonio", "Vargas", 5, "Brand new employee.", 97000);
-	employee->PrintValues();
-	Manager* manager = new Manager("Jose", "Del Rio", 5, "Covers the Chicagoland area", 120000, "Area Manager", "Construction and Engineering");
-	manager->PrintValues();
+	Menu* menu = new Menu;
+	menu->Main_Menu();
 	return 0;
 }
