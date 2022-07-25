@@ -5,11 +5,11 @@ class Employee // base class
 {
 public:
 	Employee(std::string first_name, std::string last_name, int efficiency_rating, std::string notes, double salary) { // base constructor
-		First_Name = first_name;
-		Last_Name = last_name;
-		Efficiency_Rating = efficiency_rating;
+		set_first_name(first_name);
+		set_last_name(last_name);
+		set_efficiency_rating(efficiency_rating);
+		set_salary(salary);
 		Notes = notes;
-		Salary = salary;
 	}
 	~Employee() {
 		std::cout << "Destructor Invoked\n";
@@ -29,10 +29,11 @@ public:
 	
 private:
 	std::string First_Name;
-	std::string Last_Name;
-	int Efficiency_Rating;
+	std::string Last_Name;	
 	std::string Notes;
+protected:
 	double Salary;
+	int Efficiency_Rating;
 
 };
 

@@ -29,7 +29,7 @@ double Employee::get_salary() {
 }
 // method definition to output values from the Employee class
 void Employee::PrintValues() {
-	std::cout << "********Employee Information********" << std::endl;
+	std::cout << "\n*********************Employee Information*********************" << std::endl;
 	std::cout << "Employee First Name: \t\t" << First_Name << std::endl;
 	std::cout << "Employee Last Name: \t\t" << Last_Name << std::endl;
 	std::cout << "Employee Efficiency Rating: \t" << Efficiency_Rating << std::endl;
