@@ -1,7 +1,8 @@
 #include <iostream>
+#include "Employee.h"
 
 int main() {
-	std::cout << "Hello!" << std::endl;
-
+	Employee* employee = new Employee("Antonio", "Vargas", 5, "Brand new employee.", 97000);
+	employee->PrintValues();
 	return 0;
 }

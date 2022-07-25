@@ -27,4 +27,12 @@ int Employee::get_efficiency_rating() {
 double Employee::get_salary() {
 	return Salary;
 }
-
+// method definition to output values from the Employee class
+void Employee::PrintValues() {
+	std::cout << "********Employee Information********" << std::endl;
+	std::cout << "Employee First Name: \t\t" << First_Name << std::endl;
+	std::cout << "Employee Last Name: \t\t" << Last_Name << std::endl;
+	std::cout << "Employee Efficiency Rating: \t" << Efficiency_Rating << std::endl;
+	std::cout << "Employee Salary: \t\t" << Salary << std::endl;
+	std::cout << "Notes: \t\t\t\t" << Notes << std::endl;
+}

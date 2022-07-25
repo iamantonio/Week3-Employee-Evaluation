@@ -23,7 +23,9 @@ public:
 	virtual std::string get_first_name();
 	virtual std::string get_last_name();
 	virtual double get_salary();
-	virtual double get_efficiency_rating();
+	virtual int get_efficiency_rating();
+	// virtual method to output all information stored in Employee class.
+	virtual void PrintValues();
 	
 private:
 	std::string First_Name;
