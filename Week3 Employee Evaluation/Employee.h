@@ -9,7 +9,7 @@ public:
 		set_last_name(last_name);
 		set_efficiency_rating(efficiency_rating);
 		set_salary(salary);
-		Notes = notes;
+		set_notes(notes);
 	}
 	~Employee() {
 		std::cout << "Destructor Invoked\n";
@@ -18,6 +18,7 @@ public:
 	virtual void set_first_name(std::string first_name);
 	virtual void set_last_name(std::string last_name);
 	virtual void set_salary(double salary);
+	virtual void set_notes(std::string);
 	virtual void set_efficiency_rating(int efficiency_rating);
 	// setting up the virtual getters.
 	virtual std::string get_first_name();

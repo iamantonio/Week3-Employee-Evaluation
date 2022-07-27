@@ -8,6 +8,9 @@ void Employee::set_first_name(std::string first_name) {
 void Employee::set_last_name(std::string last_name) {
 	Last_Name = last_name;
 }
+void Employee::set_notes(std::string notes) {
+	Notes = notes;
+}
 void Employee::set_efficiency_rating(int efficiency_rating) {
 	Efficiency_Rating = efficiency_rating;
 }
