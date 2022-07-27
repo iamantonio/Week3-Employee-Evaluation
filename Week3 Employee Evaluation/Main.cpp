@@ -4,7 +4,7 @@
 #include "Menu.h"
 
 int main() {
-	Menu* menu = new Menu;
-	menu->Main_Menu();
+	Menu* menu = new Menu; // new object from Menu class
+	menu->Main_Menu(); // run main menu from menu object
 	return 0;
 }
