@@ -1,3 +1,6 @@
+// Employee header file created by Antonio Vargas. 
+// Header file holds the Employee class and its attributes
+
 #pragma once
 #include <iostream>
 

@@ -1,3 +1,5 @@
+// Employee.cpp created by Antonio Vargas. This source file hold the definitions for the methods declared in the Employee.h file
+
 #include "Employee.h"
 #include <iostream>
 

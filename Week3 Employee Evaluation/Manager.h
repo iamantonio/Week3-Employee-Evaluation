@@ -1,3 +1,6 @@
+// Manager header file created by Antonio Vargas. 
+// Header file holds the Manager class and its attributes
+
 #pragma once
 #include "Employee.h"
 

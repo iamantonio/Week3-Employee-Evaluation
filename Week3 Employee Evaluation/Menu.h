@@ -1,3 +1,6 @@
+// Menu header file created by Antonio Vargas. 
+// Header file holds the Menu class and its attributes
+
 #pragma once
 #include <iostream>
 // created the class menu for the program

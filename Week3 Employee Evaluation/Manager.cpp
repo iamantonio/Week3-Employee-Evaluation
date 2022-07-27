@@ -1,3 +1,5 @@
+// Manager.cpp file created by Antonio Vargas. This source file hold the definitions for the methods declared in the header file Manager.h
+
 #include "Manager.h"
 #include <iostream>
 
