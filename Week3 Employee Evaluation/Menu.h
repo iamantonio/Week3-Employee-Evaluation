@@ -18,5 +18,6 @@ private:
 public:
 	void Main_Menu(); // declared function for main menu
 	void int_validator(); // declared function for integer validator
+	inline void pressEnterToContinue();
 };
 

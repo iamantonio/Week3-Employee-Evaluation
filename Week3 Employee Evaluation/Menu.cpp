@@ -9,6 +9,7 @@
 #include <string>
 
 void Menu::int_validator() { // method for the int validator
+	isValid = false;
 	if (std::cin.good())
 	{
 		// if valid integer entered by user exit loop by updating isValid to true
@@ -21,6 +22,13 @@ void Menu::int_validator() { // method for the int validator
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cout << "Please enter a valid integer!" << std::endl;
 	}
+}
+// method for user to press enter to continue (source: https://stackoverflow.com/questions/24776262/pause-console-in-c-program)
+inline void Menu::pressEnterToContinue() {
+	std::string dummy;
+	std::cout << "Thank you!!\nPress enter to go back to main menu..." << std::endl;
+	std::cin.ignore();
+	std::getline(std::cin, dummy);
 }
 // using pointers for classes
 Employee* emp = new Employee("", "", 1, "", 1);
@@ -59,15 +67,20 @@ void Menu::Main_Menu() {
 			std::cin.ignore(); // this is to ignore the enter button after entering the first name
 			std::getline(std::cin, last_name); // using getline here in case users have multiple last names
 			emp->set_last_name(last_name); // pass last name to employee class
-			std::cout << "Employee Efficiency Rating: ";			
-			std::cin >> eff_rating;
-			while (eff_rating <= 0 || eff_rating > 5) // i want to make sure the user only enters an integer that is greater than 0 but less than 6
+			do 
 			{
-				std::cout << "You must enter a rating between 1 and 5. " << std::endl; // if user enters anything less than 0 or greater than 6
 				std::cout << "Employee Efficiency Rating: ";
 				std::cin >> eff_rating;
-			}
-			emp->set_efficiency_rating(eff_rating); // passing eff rating to emp class			
+				int_validator();
+				while (eff_rating <= 0 || eff_rating >=6) // i want to make sure the user only enters an integer that is greater than 0 but less than 6
+				{
+					std::cout << "You must enter a rating between 1 and 5. " << std::endl; // if user enters anything less than 0 or greater than 6
+					std::cout << "Employee Efficiency Rating: ";
+					std::cin >> eff_rating;
+					int_validator();
+				}
+				emp->set_efficiency_rating(eff_rating); // passing eff rating to emp class
+			} while (!isValid);
 			std::cout << "Employee Notes: ";
 			std::cin.ignore(); 
 			std::getline (std::cin,notes); // used get lines for spaces in notes
@@ -80,18 +93,9 @@ void Menu::Main_Menu() {
 				emp->set_salary(salary);
 
 			} while (!isValid); // run loop until isValid is true and will only turn true if valid int is entered.
-			// after user enters information they can either enter a int to save the inputs and go back to main menu, or enter a char to re-enter employee evaluation but will loose whatever they entered previously.
-			std::cout << "Thank you!!\nEnter an integer to save employee evaluation and go back to the Main Menu\n\nEnter a character to go back to enter a different employee evaluation (Note that you will loose currently entered employee)." << std::endl;
-			std::cin >> goBack;
-			if (goBack == 1)
-			{
-				system("CLS");
-				break;
-			}
-			else {
-				system("CLS");
-				break;
-			}
+			pressEnterToContinue();
+			system("CLS");
+			break;
 		case 2:  // manager evaluation is similar to employee evaluation
 			system("CLS");
 			std::cout << "**** Manager Evaluation ****" << std::endl;
@@ -118,6 +122,7 @@ void Menu::Main_Menu() {
 					std::cout << "You must enter a rating between 1 and 5. " << std::endl;
 					std::cout << "Manager Efficiency Rating: ";
 					std::cin >> eff_rating;
+					int_validator();
 				}
 				mgr->set_efficiency_rating(eff_rating);
 			} while (!isValid);			
@@ -134,17 +139,9 @@ void Menu::Main_Menu() {
 				mgr->set_salary(salary);
 
 			} while (!isValid);
-			std::cout << "Thank you!!\nEnter an integer to save manager evaluation and go back to the Main Menu\n\nEnter a character to go back to enter a different Manager evaluation (Note that you will loose currently entered manager)."<< std::endl;
-			std::cin >> goBack;
-			if (goBack == 1)
-			{
-				system("CLS");
-				break;
-			}
-			else {
-				system("CLS");
-				break;
-			}
+			pressEnterToContinue();
+			system("CLS");
+			break;
 
 		case 3: // Print evaluation sub-menu
 			isValid = false; // making sure that isValid is set to false in case the previous loop set it back to true.
@@ -172,17 +169,9 @@ void Menu::Main_Menu() {
 				}
 
 			} while (!isValid);
-			std::cout << "Thank you!!\nEnter an integer to go back to the Main Menu\nEnter a character to go back to print options" << std::endl;
-			std::cin >> goBack;
-			if (goBack == 1)
-			{
-				system("CLS");
-				break;
-			}
-			else {
-				system("CLS");
-				break;
-			}
+			pressEnterToContinue();
+			system("CLS");
+			break;
 		case 4: // if user wants to quit the program
 			std::cout << "Thank you and good bye!" << std::endl;
 			break;
